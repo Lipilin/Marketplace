@@ -1,18 +1,18 @@
 export default function Header(){
     return (
-        <header className = "fixed p-4 w-full m-auto">
-            <div className = "header-content flex justify-center align-items-center gap-3 w-full">
-                <div>
-                    Маркетплейс
+        <header className = "sticky p-4 w-full m-auto">
+            <div className = "header-content">
+                <div className = "header-content-item">
+                    Главная
                 </div>
-                <div>
+                <div className = "header-content-item">
                     Категории
                 </div>
-                <div>
+                <div className = "header-content-item">
                     Товары
                 </div>
-                <div>
-                    Последние Отзывы
+                <div className = "header-content-item"> 
+                    Отзывы
                 </div>
             </div>
         </header>

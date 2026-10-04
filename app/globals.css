@@ -4,3 +4,58 @@
   --font-inter: var(--font-inter-sans);
 }
 
+body{
+  @apply h-screen;
+  @apply flex flex-col;
+}
+
+.home-page{
+  @apply flex flex-col items-center justify-center flex-1;
+}
+
+.header-content{
+  @apply flex justify-center items-center gap-3 w-full;
+}
+
+.header-content-item{
+  @apply hover:text-blue-500;
+  cursor: pointer;
+}
+
+.main-content-container{
+  @apply max-w-4xl m-auto p-4 text-center flex flex-col gap-4 items-center;
+  @apply lg:gap-16;
+}
+
+.main-content-header{
+  @apply flex flex-col gap-2;
+
+}
+
+.main-content-feature-grid{
+  @apply grid-cols-1;
+  @apply grid lg:grid-cols-2 gap-4;
+}
+
+.main-content-feature-grid-item{
+  @apply p-8 rounded-lg shadow-md text-left border border-gray-100;
+  @apply flex flex-col gap-2;
+}
+
+.main-content-feature-grid-item h3{
+  @apply text-2xl font-semibold;
+}
+
+.main-content-feature-grid-item span{
+  @apply text-base font-medium;
+}
+
+.main-content-header-title{
+  @apply text-3xl;
+  @apply font-bold lg:text-5xl;
+}
+
+.main-content-header-description{
+  @apply text-xl font-semibold;
+  @apply lg:text-3xl;
+}
