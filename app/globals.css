@@ -40,6 +40,7 @@ body{
 .main-content-feature-grid-item{
   @apply p-8 rounded-lg shadow-md text-left border border-gray-100;
   @apply flex flex-col gap-2;
+  @apply hover:scale-105 transition-all duration-300;
 }
 
 .main-content-feature-grid-item h3{

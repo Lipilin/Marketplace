@@ -3,6 +3,7 @@ import { Inter, Geist_Mono } from "next/font/google";
 import Header from "@/components/layout/header/header"
 import Footer from "@/components/layout/footer/footer"
 import "./globals.css";
+import { BrowserRouter } from "react-router";
 
 const geistSans = Inter({
   variable: "--font-inter-sans",
@@ -27,10 +28,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="font-inter">
         <Header />
-        {children}
-          
+
+          {children}
+        
         <Footer />
-      </body>
+      </body> 
     </html>
   );
 }

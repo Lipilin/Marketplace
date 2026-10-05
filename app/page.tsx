@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className = "home-page">
@@ -11,38 +13,38 @@ export default function Home() {
           </p>
         </div>
         <div className = "main-content-feature-grid">
-          <div className = "main-content-feature-grid-item">
+          <Link href = '/' className = "main-content-feature-grid-item">
             <h3>
               Главная →
             </h3>
             <span>
               Здесь вы сможете найти все что вам нужно
             </span>
-          </div>
-          <div className = "main-content-feature-grid-item">
+          </Link>
+          <Link href = '/product-list' className = "main-content-feature-grid-item">
             <h3>
               Товары →
             </h3>
             <span>
               Здесь вы можете посмотреть/купить товары
             </span>
-          </div>
-          <div className = "main-content-feature-grid-item">
+          </Link>
+          <Link href = '/categories' className = "main-content-feature-grid-item">
             <h3>
               Категории →
             </h3>
             <span>
               Здесь вы можете посмотреть категории товаров
             </span>
-          </div>
-          <div className = "main-content-feature-grid-item">
+          </Link>
+          <Link href = '/reviews' className = "main-content-feature-grid-item">
             <h3>
               Оставить отзыв →
             </h3>
             <span>
               Здесь вы можете оставить отзывы
             </span>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
