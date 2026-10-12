@@ -2,10 +2,12 @@
 import { useForm } from "react-hook-form";
 import { useCallback, useTransition } from "react";
 import { createReviewAction } from "../actions/postAction";
+import { useRouter } from "next/navigation";
 
 export function ReviewForm(){
     const {register, handleSubmit, formState: {errors}} = useForm<ReviewFormData>();
     const [isPending, startTransition] = useTransition();
+    const router = useRouter();
     const onSubmit = useCallback((data: ReviewFormData) => {
         startTransition(async () => {
             const formData: FormData = new FormData();
@@ -14,9 +16,13 @@ export function ReviewForm(){
             formData.append('comment', data.comment);
             formData.append('rating', data.rating.toString());
             const result = await createReviewAction(formData);
-            console.log(result)
+            if(result.status === 'success'){
+                router.refresh();
+            }else{
+                alert(result.message);
+            }
         })
-    }, []);
+    }, [router]);
     return (
         <>
             <div className="reviews-form-container">

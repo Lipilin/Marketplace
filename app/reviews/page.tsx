@@ -36,17 +36,7 @@ export default async function Reviews() {
                     </li>
                 ))}
             </ul>
-            <div className = "review-create-suppose">
-                <div className = "review-create-suppose-title">
-                    Понравился Marketplace?
-                </div>
-                <div className = "review-create-suppose-description">
-                    Оставьте свой отзыв и помогите другим пользователям сделать правильный выбор.
-                </div>
-                <button className = "review-create-suppose-button">
-                    Оставить отзыв
-                </button>
-            </div>
+            <ReviewForm />
         </div>
     )
 }

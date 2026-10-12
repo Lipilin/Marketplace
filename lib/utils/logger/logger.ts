@@ -10,6 +10,14 @@ export const Logger = pino({
     }, 
     level, 
     transport: {
-        target: 'pino-pretty',
+        targets: [
+            {
+                target: 'pino-pretty',
+            },
+            {
+                target: 'pino/file',
+                options: { destination: './logs/app.log', mkdir: true },
+            },
+        ],
     },
 });
