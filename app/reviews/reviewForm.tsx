@@ -4,8 +4,12 @@ import { useCallback, useTransition } from "react";
 import { createReviewAction } from "../actions/postAction";
 import { useRouter } from "next/navigation";
 
+const STAR_GRAY = "/star-gray.svg";
+const STAR_FILLED = "/star-filled.svg";
+
 export function ReviewForm(){
-    const {register, handleSubmit, formState: {errors}} = useForm<ReviewFormData>();
+    const {register, handleSubmit, formState: {errors}, setValue, watch} = useForm<ReviewFormData>();
+    const rating = watch('rating') ?? 0;
     const [isPending, startTransition] = useTransition();
     const router = useRouter();
     const onSubmit = useCallback((data: ReviewFormData) => {
@@ -31,7 +35,33 @@ export function ReviewForm(){
                     <input type = "text" placeholder="Имя" {...register('userName')} />
                     <input type = "text" placeholder="Заголовок" {...register('title')} />
                     <input type = "text" placeholder="Отзыв" {...register('comment')} />
-                    <input type = "number" placeholder="Рейтинг" {...register('rating')} />
+                    <div className = "reviews-form-item-stars">
+                        <label htmlFor="rating">Рейтинг</label> 
+                        <ul className="reviews-stars">
+                            {Array.from({ length: 5 }, (_, index) => {
+                                const value = (index + 1) as ReviewRating;
+                                const filled = value <= rating;
+                                return (
+                                    <li key={index}>
+                                        <button
+                                            type="button"
+                                            className="reviews-star-button"
+                                            onClick={() => setValue('rating', value, { shouldValidate: true })}
+                                            aria-label={`${value} из 5`}
+                                        >
+                                            <img
+                                                src={filled ? STAR_FILLED : STAR_GRAY}
+                                                alt=""
+                                                width={32}
+                                                height={32}
+                                            />
+                                        </button>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                    <input type = "hidden" placeholder="Рейтинг" {...register('rating')} />
                     <button className="reviews-form-button" type="submit">Отправить</button>
                 </form>
                 <div className="reviews-form-error">
