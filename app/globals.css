@@ -101,3 +101,46 @@ body{
 .reviews-list-item-rating{
   @apply flex flex-row gap-1;
 }
+
+.reviews-form-container{
+  @apply flex flex-col items-center p-4 items-center w-full max-w-4xl;
+}
+
+.reviews-form-title{
+  @apply text-2xl font-bold;
+}
+
+.reviews-form{
+  @apply flex flex-col gap-2;
+  @apply w-full max-w-xl;
+}
+
+.reviews-form input{
+  @apply p-4;
+  @apply outline-none;
+}
+
+.reviews-form-button{
+  @apply p-4 bg-blue-500 text-white rounded-md transition-all duration-300;
+  @apply hover:bg-blue-600;
+  @apply cursor-pointer;
+}
+
+.review-create-suppose{
+  @apply flex flex-col items-center p-4 gap-4 w-full text-center;
+}
+
+.review-create-suppose-title{
+  @apply text-3xl font-bold;
+}
+
+.review-create-suppose-description{
+  @apply text-base font-normal;
+  @apply w-full max-w-lg;
+}
+
+.review-create-suppose-button{
+  @apply p-4 bg-blue-500 text-white rounded-md transition-all duration-300 w-full max-w-sm;
+  @apply hover:bg-blue-600;
+  @apply cursor-pointer;
+}
