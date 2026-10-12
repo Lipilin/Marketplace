@@ -1,0 +1,1 @@
+type ReviewFormData = Omit<Review, 'id' | 'createdAt' | 'updatedAt'>;
