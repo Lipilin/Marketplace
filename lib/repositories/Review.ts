@@ -1,6 +1,3 @@
-import BaseRepository from "@/types/Database/BaseRepository";
-import Driver from "@/types/Database/Driver";
-
 export class ReviewRepository implements BaseRepository<Review | ReviewFormData>{
 
     table = 'reviews';

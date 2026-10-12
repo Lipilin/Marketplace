@@ -1,4 +1,4 @@
-export default interface Category {
+interface Category {
     id: number;
     name: string;
     alias: string;

@@ -1,4 +1,4 @@
-export default interface ProductFilter<T extends FilterValue>{
+interface ProductFilter<T extends FilterValue>{
     name: string;
     options: Option<T>[];
 }

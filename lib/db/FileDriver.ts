@@ -1,6 +1,5 @@
 import { readFile, writeFile } from 'fs/promises';
 import path from 'path';
-import Driver from '@/types/Database/Driver';
 import { Logger } from '@/lib/utils/logger/logger';
 
 export default class FileDriver implements Driver{

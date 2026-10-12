@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import Header from "@/components/layout/header/header"
 import Footer from "@/components/layout/footer/footer"
@@ -15,7 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Приложение Маркетплейс",
   description: "Приложение маркетплейс пет-проект разработчика Егора Липилина",
 };

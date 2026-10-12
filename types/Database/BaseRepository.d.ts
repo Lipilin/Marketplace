@@ -1,6 +1,4 @@
-import Driver from "./Driver";
-
-export default interface BaseRepository<T>{
+interface BaseRepository<T>{
     table: string;
     findAll(): Promise<T[]>;
     find(clause: Record<string, any>): Promise<T | null>;

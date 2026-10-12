@@ -1,4 +1,4 @@
-export default interface Driver{
+interface Driver{
     read<T>(table: string): Promise<T[]>;
     write<T>(table: string, data: T): Promise<void>;
 }
