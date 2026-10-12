@@ -1,8 +1,7 @@
 import BaseRepository from "@/types/Database/BaseRepository";
-import Review from "@/types/Reviews/Review";
 import Driver from "@/types/Database/Driver";
 
-export class ReviewRepository implements BaseRepository<Review>{
+export class ReviewRepository implements BaseRepository<Review | ReviewFormData>{
 
     table = 'reviews';
 
@@ -19,6 +18,19 @@ export class ReviewRepository implements BaseRepository<Review>{
 
     async findOrFall(): Promise<Review> {
         return Promise.resolve(null as unknown as Review);
+    }
+
+    async create(data: ReviewFormData): Promise<void>{
+        const buf = new Uint32Array(2);
+        crypto.getRandomValues(buf);
+        const id = (buf[0] * 0x200000) + (buf[1] >>> 11);
+        const review: Review = {
+            ...data, 
+            id : id,
+            createdAt: new Date(),
+            updatedAt: new Date(),
+        }
+        return await this.driver.write(this.table, review);
     }
 }
 
