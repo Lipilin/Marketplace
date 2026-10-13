@@ -32,9 +32,18 @@ export function ReviewForm(){
             <div className="reviews-form-container">
                 <div className="reviews-form-title">Оставить отзыв</div>
                 <form className="reviews-form" onSubmit={handleSubmit(onSubmit)}>
-                    <input type = "text" placeholder="Имя" {...register('userName')} />
-                    <input type = "text" placeholder="Заголовок" {...register('title')} />
-                    <input type = "text" placeholder="Отзыв" {...register('comment')} />
+                    <div className="reviews-form-item-input">
+                        <input type = "text" {...register('userName')} />
+                        <label htmlFor="userName">Имя</label>
+                    </div>
+                    <div className="reviews-form-item-input">
+                        <input type = "text" {...register('title')} />
+                        <label htmlFor="title">Заголовок</label>
+                    </div>
+                    <div className="reviews-form-item-input">
+                        <input type = "text" {...register('comment')} />
+                        <label htmlFor="comment">Отзыв</label>
+                    </div>
                     <div className = "reviews-form-item-stars">
                         <label htmlFor="rating">Рейтинг</label> 
                         <ul className="reviews-stars">

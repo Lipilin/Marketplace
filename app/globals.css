@@ -122,7 +122,10 @@ body{
 
 .reviews-form input{
   @apply p-4;
+  @apply border border-gray-100 rounded-md;
   @apply outline-none;
+  @apply focus:border-blue-500;
+  @apply transition-all duration-300;
 }
 
 .reviews-form-button{
@@ -203,4 +206,27 @@ body{
 
 .reviews-form-item-stars label{
   @apply font-light text-gray-500;
+}
+
+.reviews-form-item-input{
+  @apply relative;
+  @apply w-[100%];
+}
+
+.reviews-form-item-input input{
+  @apply w-[100%];
+}
+
+.reviews-form-item-input label{
+  @apply pointer-events-none;
+  @apply left-2 top-1/2 translate-y-[-50%];
+  @apply absolute;
+  @apply text-gray-500 font-light;
+  @apply transition-all duration-300;
+  @apply bg-white p-2 rounded-md;
+}
+
+.reviews-form-item-input input:focus + label{
+  @apply top-0;
+  @apply text-blue-500;
 }
